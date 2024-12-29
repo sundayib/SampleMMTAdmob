@@ -24,7 +24,7 @@ jobs:
     - name: Install .NET MAUI
       run: dotnet workload install maui
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore SampleMMTAdmob/MMTAdmobSample.csproj
     - name: Build
       run: dotnet build SampleMMTAdmob/MMTAdmobSample.csproj -c Release -f net8.0-android /p:AndroidSigningKeyStore=whot.keystore /p:AndroidSigningKeyAlias=whotkey /p:AndroidSigningKeyPass="${{ secrets.PWD }}" /p:AndroidSigningStorePass="${{ secrets.PWD }}" --no-restore
     - name: Upload a Build Artifact
